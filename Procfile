@@ -1,0 +1,1 @@
+web: gunicorn src.openai_pdf_api.app:app

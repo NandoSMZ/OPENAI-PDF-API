@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: openai-pdf-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn src.openai_pdf_api.app:app
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_ASSISTANT_ID
+        sync: false
+    plan: free
